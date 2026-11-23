@@ -19,27 +19,32 @@ export const words = {
   here: ['どうぞ','dōzo','Here you are. Used when offering something.','どうぞ'],
   thanks: ['ありがとう','arigatō','Thank you.','ありがとう','有難う'],
   polite: ['ございます','gozaimasu','Adds politeness to this expression of thanks.','ございます'],
+  which: ['どの','dono','Which. Used before a noun when asking someone to choose.','どの'],
+  to: ['に','ni','Marks what someone chooses in the expression にする.','に'],
+  choose: ['されます','saremasu','A respectful form of する. Here it asks what the customer will choose.','されます'],
+  this: ['この','kono','This. Points to a nearby item and comes before a noun.','この'],
+  large: ['大きい','ōkii','Large or big.','おおきい'],
+  table: ['テーブル','tēburu','A table. Written in katakana.','てーぶる'],
 };
 export const scenes = [
-  {title:'Place your order',icon:'cup',image:'cafe',bar:['welcome','。','order','topic','？'],bRom:'Irasshaimase. Gochūmon wa?',bEn:'Welcome! What would you like to order?',you:['coffee','object','please'],rom:'Kōhī o kudasai.',en:'Coffee, please.'},
-  {title:'Choose a size',icon:'size',image:'scene-2',bar:['size','topic','how','is','question','？'],bRom:'Saizu wa ikaga desu ka?',bEn:'What size would you like?',you:['small','one','object','please'],rom:'Chiisai no o kudasai.',en:'The small one, please.'},
-  {title:'For here or to go',icon:'store',image:'scene-3',bar:['inside','at','alright','is','question','？'],bRom:'Tennai de yoroshii desu ka?',bEn:'Will you be having it here?',you:['yes','、','inside','at','request'],rom:'Hai, tennai de onegaishimasu.',en:'Yes, for here, please.'},
-  {title:'Say thank you',icon:'chat',image:'scene-4',bar:['coffee','is','。','here','。'],bRom:'Kōhī desu. Dōzo.',bEn:'Here’s your coffee. Enjoy!',you:['thanks','polite'],rom:'Arigatō gozaimasu.',en:'Thank you very much.'}
+  {title:'Place your order',icon:'cup',image:'cafe',bar:['welcome','。'],barSound:'welcome',bRom:'Irasshaimase.',bEn:'Welcome!',you:['coffee','object','please'],youSound:'coffee-order',rom:'Kōhī o kudasai.',en:'Coffee, please.'},
+  {title:'Choose a size',icon:'size',image:'scene-2',bar:['which','size','to','choose','question','？'],barSound:'bar1',bRom:'Dono saizu ni saremasu ka?',bEn:'Which size would you like?',you:['this','large','one','、','request'],youSound:'you1',rom:'Kono ōkii no, onegaishimasu.',en:'This large one, please.'},
+  {title:'Choose a table',icon:'store',image:'scene-3',bar:['this','table','at','alright','is','question','？'],barSound:'bar2',bRom:'Kono tēburu de yoroshii desu ka?',bEn:'Would this table be all right?',you:['yes','、','request'],youSound:'you2',rom:'Hai, onegaishimasu.',en:'Yes, please.'},
+  {title:'Say thank you',icon:'chat',image:'scene-4',bar:['here','。'],barSound:'here',bRom:'Dōzo.',bEn:'Here you are.',you:['thanks','polite'],youSound:'you3',rom:'Arigatō gozaimasu.',en:'Thank you very much.'}
 ];
 export const levels = ['Beginner','Intermediate','Advanced'];
 export const quizzes = [
   [
     {q:'What does コーヒー (kōhī) mean?',choices:['Coffee','Tea','Milk'],a:0},
-    {q:'How do you say ありがとう (arigatō)?',audio:['kudasai','arigatou','douzo'],read:['ください','ありがとう','どうぞ'],a:1},
-    {q:'What does 小さい (chiisai) mean?',choices:['Hot','Large','Small'],a:2}
+    {q:'How do you say ありがとう (arigatō)?',audio:['please','thanks','here'],a:1},
+    {q:'What does 大きい (ōkii) mean?',choices:['Hot','Small','Large'],a:2}
   ],[
-    {q:'In 店内でお願いします, what does 店内 mean?',choices:['Inside the café','The counter','Takeaway'],a:0},
-    {q:'Which reading matches ご注文?',audio:['gochuumon','gozaimasu','onegaishimasu'],read:['ごちゅうもん','ございます','おねがいします'],a:0},
-    {q:'What is the customer requesting with 小さいのをください?',choices:['A smaller table','The small size','Another drink'],a:1}
+    {q:'In この大きいの、お願いします, what does 大きい describe?',choices:['The size of the drink','The price of the drink','The location of the café'],a:0},
+    {q:'Which recording says お願いします?',audio:['request','polite','alright'],a:0},
+    {q:'What does the barista offer with このテーブルでよろしいですか？',choices:['Another drink','A place to sit','A takeaway cup'],a:1}
   ],[
-    {q:'「店内でよろしいですか」で店員が確認しているのはどれですか。',choices:['飲み物の大きさ','支払い方法','店内で飲むかどうか'],a:2},
-    {q:'「ご注文は？」の読み方として正しいものを選んでください。',audio:['gochuumonwa','gochuumonga','gochuumono'],read:['ごちゅうもんわ','ごちゅうもんが','ごちゅうもんを'],a:0},
-    {q:'「小さいのをください」の「の」は何を指していますか。',choices:['店内の席','注文する飲み物','店員のおすすめ'],a:1}
+    {q:'「このテーブルでよろしいですか」で、店員は何を確認していますか。',choices:['飲み物の大きさ','支払い方法','お客様の席'],a:2},
+    {q:'「よろしい」の読み方として正しいものを選んでください。',audio:['alright','large','how'],a:0},
+    {q:'「この大きいの」の「の」は何を指していますか。',choices:['店内の席','注文する飲み物','店員のおすすめ'],a:1}
   ]
 ];
-export const phrase = keys => keys.map(k=>words[k]?.[0] ?? k).join('');
