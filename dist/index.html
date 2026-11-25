@@ -1,15 +1,16 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#faf9f6"><title>Kotoba · Japanese story practice</title><meta name="description" content="Read Japanese in an illustrated café story with native-speaker audio."><link rel="icon" href="assets/mark.svg"><link rel="stylesheet" href="style.css"></head>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#faf9f6"><title>Kotoba · Japanese story practice</title><meta name="description" content="Practice Japanese with illustrated stories, spoken dialogue, and word-by-word readings."><link rel="icon" href="assets/mark.svg"><link rel="stylesheet" href="style.css?v=2"></head>
 <body>
 <header><div class="navwrap"><a class="brand" href="#practice" aria-label="Kotoba story practice"><img src="assets/mark.svg" alt="">Kotoba</a><nav aria-label="Main"><button id="practiceNav" class="navitem active"><i data-icon="story"></i>Story practice</button><button id="wordsNav" class="navitem"><i data-icon="book"></i>Wordbook</button></nav><div class="language"><span class="flag"></span>Japanese</div></div></header>
 <main id="practice">
-<div class="intro"><div><div class="eyebrow"><span class="edition"></span> EVERYDAY JAPANESE <span class="mid">/</span> STORY 01</div><h1>At the café<span class="period">.</span></h1><p>Step into a Tokyo café and order a drink in Japanese.</p></div>
-<label class="level"><i data-icon="levels"></i><select id="level" aria-label="Practice level"><option>Beginner</option><option>Intermediate</option><option>Advanced</option></select><i data-icon="down"></i></label></div>
+<div class="intro"><div><div class="eyebrow"><span class="edition"></span> EVERYDAY JAPANESE <span class="mid">/</span> <span id="storyNumber">STORY 01</span></div><h1><span id="storyTitle">At the café</span><span class="period">.</span></h1><p id="storyDescription">Step into a Tokyo café and order a drink in Japanese.</p></div>
+<div class="practice-controls"><label class="level"><i data-icon="book"></i><select id="stories" aria-label="Choose a story"></select><i data-icon="down"></i></label>
+<label class="level"><i data-icon="levels"></i><select id="level" aria-label="Practice level"><option>Beginner</option><option>Intermediate</option><option>Advanced</option></select><i data-icon="down"></i></label></div></div>
 <div id="lesson"></div>
 </main>
 <dialog id="detail"><div id="dialogContent"></div></dialog>
 <div id="announcer" class="sr" aria-live="polite"></div>
 <footer><span>Kotoba <b>·</b> Japanese story practice</span><button id="credits">Audio credits</button></footer>
-<script type="module" src="app.js"></script>
+<script type="module" src="app.js?v=2"></script>
 </body></html>

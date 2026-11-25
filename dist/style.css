@@ -14,3 +14,23 @@ dialog{width:min(440px,92vw);border:1px solid var(--line);border-radius:17px;bac
 .level i{position:absolute;display:grid;place-items:center;left:13px;top:50%;transform:translateY(-50%);pointer-events:none}.level i:last-child{left:auto;right:10px}.level i svg:last-child{position:static;width:15px;height:15px}.level i:last-child svg{width:13px}.yourline .token+.token{margin-left:.14em}
 @media(max-width:535px){.level i{left:9px}.level i:last-child{right:7px}.level i svg:last-child{width:12px}.navitem{white-space:nowrap}.navwrap{gap:10px}.navitem svg{display:none}}
 @media(max-width:390px){.intro{display:flex;flex-wrap:wrap}.level{position:relative;top:auto}.intro h1{margin-top:8px}}
+
+.practice-controls {display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;flex-shrink:0}
+.practice-controls .level {position:relative;inset:auto}
+.path ol {display:grid;grid-template-columns:repeat(5,minmax(0,1fr))}
+@media(max-width:1100px) {
+  .intro {align-items:flex-start;flex-direction:column}
+  .practice-controls {justify-content:flex-start}
+}
+@media(max-width:800px) {
+  .path ol {grid-template-columns:repeat(auto-fit,minmax(125px,1fr))}
+}
+@media(max-width:535px) {
+  .practice-controls {margin-top:12px}
+  .path ol {grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:350px) {
+  .navwrap {gap:6px}
+  .navwrap nav {gap:8px}
+  .language {display:none}
+}

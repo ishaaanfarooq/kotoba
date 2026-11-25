@@ -48,3 +48,13 @@ export const quizzes = [
     {q:'「この大きいの」の「の」は何を指していますか。',choices:['店内の席','注文する飲み物','店員のおすすめ'],a:1}
   ]
 ];
+
+export const cafe = {
+  id: 'cafe', title: 'At the café',
+  description: 'Step into a Tokyo café and order a drink in Japanese.',
+  words, quizzes, audioDirectory: 'assets/japanese',
+  scenes: scenes.map(scene => ({
+    ...scene, image: 'assets/' + scene.image, you: [...scene.you, '。'],
+  })),
+  quizImage: 'assets/scene-5', quizAlt: 'A finished cup of coffee in the café.',
+};

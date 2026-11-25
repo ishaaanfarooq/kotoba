@@ -1,0 +1,20 @@
+plugins {
+    id 'com.android.application' version '8.2.2'
+}
+
+android {
+    namespace 'app.kotoba.reader'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId 'app.kotoba.reader'
+        minSdk 26
+        targetSdk 34
+        versionCode 1
+        versionName '1.0'
+    }
+
+    // The café illustrations and recordings are shared with the original lesson.
+    sourceSets.main.assets.srcDir(rootProject.file('dist/assets'))
+    androidResources.noCompress += ['wav', 'mp3']
+}
